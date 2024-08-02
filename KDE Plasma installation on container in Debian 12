@@ -1,0 +1,80 @@
+Debian 12 ( kde plasma) -
+
+1) sudo apt-get update && sudo apt-get upgrade
+2) sudo apt-get -y install xrdp
+3) dpkg -L xrdp
+4) sudo adduser xrdp ssl-cert
+5) sudo systemctl restart xrdp
+6) sudo apt-get install kde-plasma-desktop(good) or sudo apt-get install kde-standard( good)
+7) sudo systemctl restart xrdp
+8) sudo apt-get update && sudo apt-get upgrade
+12) sudo apt install software-properties-common apt-transport-https ca-certificates curl -y
+13) curl -fSsL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /usr/share/keyrings/microsoft-edge.gpg > /dev/null
+14) echo 'deb [signed-by=/usr/share/keyrings/microsoft-edge.gpg] https://packages.microsoft.com/repos/edge stable main' | sudo tee /etc/apt/sources.list.d/microsoft-edge.list
+15) sudo apt-get update
+16) sudo apt install microsoft-edge-stable ( Edge only open on user profile not in root profile)
+17) sudo apt-get update && sudo apt-get upgrade
+18) sudo apt-get install libreoffice
+19) sudo apt-get update
+20) sudo add-apt-repository ppa:yann1ck/onedrive
+21) sudo apt-get install onedrive
+22) onedrive (type or run on user profile terminal and copy the link and past on browser, login and user can access)
+- systemctl --user enable onedrive
+
+- systemctl --user start onedrive
+
+- systemctl status --user onedrive
+
+- onedrive --synchronize
+
+- onedrive --synchronize --resync
+
+23) Cloudcode Installation -
+
+1- usermod -aG sudo sukanta (add root permission)
+
+ 
+
+ 
+
+sudo gpasswd -d sukanta sudo  (remove root permission)
+
+(Need user to make root before run this after installation user can make again normal user)
+
+    1  To install dotnet-runtime-6.0
+- wget https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+- sudo dpkg -i packages-microsoft-prod.deb
+- sudo apt update
+- sudo apt install -y apt-transport-https
+- sudo apt install dotnet-sdk-6.0
+
+    2  rm packages-microsoft-prod.deb
+
+    3  wget https://agent.ssoone.com/ccsfiles/CcsPlatform_Lin_ver_2.6.zip
+
+    4  sudo apt install unzip
+
+    5  unzip CcsPlatform_Lin_ver_2.6.zip  
+
+    6  cd CCS_Platform_Ver_2.6/CcsSecurity
+
+    7  sudo ./Install.sh
+   
+    8  Yes -> Yes
+
+    9 volza.ssoone.com
+
+   10  sudo ./trustcertificate.sh
+
+   21  ./trustcertificate.sh (run from user profile also)
+
+   22  cd /etc/xrdp
+   
+   23  sudo nano xrdp.ini
+   
+       - xrdpd=flase
+       - cliprdr=flase
+       - save by (ctrl+o) & (cterl+x)
+   24  systemctl restart xrdp
+
+   25 sudo apt-get update && sudo apt-get upgrade
